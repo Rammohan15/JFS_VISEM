@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    
+</head>
+<body>
+    <h1>Calculator</h1>
+    <table>
+        <tr>
+            <td>N1: </td>
+            <td><input type="text" name="n1" id="n1"></td>
+        </tr>
+        <tr>
+            <td>N2: </td>
+            <td><input type="text" name="n2" id="n2"></td>
+        </tr>
+        <tr>
+            <td>Result: </td>
+            <td><input type="text" name="res" id="res"></td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="addition()" name="add-btn" id="add-btn" style="background-color: yellow;">ADD</button>
+                <button onclick="subtraction()" name="sub-btn" id="sub-btn" style="background-color: red;">SUB</button>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <button onclick="multiplication()" name="mul-btn" id="mul-btn" style="background-color: green;">MUL</button>
+                <button onclick="division()" name="div-btn" id="div-btn" style="background-color: pink;">DIV</button>
+            </td>
+        </tr>
+
+    </table>
+    <script>
+        function addition(){
+            let a= parseInt(document.getElementById("n1").value);
+            let b= parseInt(document.getElementById("n2").value);
+            document.getElementById("res").value=(a+b);
+        }
+        function subtraction(){
+            let a= parseInt(document.getElementById("n1").value);
+            let b= parseInt(document.getElementById("n2").value);
+            document.getElementById("res").value=(a-b);
+        }
+        function multiplication(){
+            let a=parseInt(document.getElementById("n1").value);
+            let b=parseInt(document.getElementById("n2").value);
+            document.getElementById("res").value=(a*b);
+        }
+        function division() {
+            let a = parseFloat(document.getElementById("n1").value);
+            let b = parseFloat(document.getElementById("n2").value);
+
+            if (b === 0 || isNaN(b)) {
+                document.getElementById("res").value = "Cannot divide by 0";
+            } else {
+                document.getElementById("res").value = a / b;
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
